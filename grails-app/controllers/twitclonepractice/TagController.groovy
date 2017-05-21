@@ -1,5 +1,5 @@
 package twitclonepractice
 
 class TagController {
-  scaffold = true
+  def scaffold = true
 }

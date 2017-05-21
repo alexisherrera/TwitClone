@@ -1,5 +1,5 @@
 package twitclonepractice
 
 class PostController {
-  scaffold = true
+  def scaffold = true
 }

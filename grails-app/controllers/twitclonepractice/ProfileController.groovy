@@ -1,5 +1,5 @@
 package twitclonepractice
 
 class ProfileController {
-  scaffold = true
+  def scaffold = true
 }
