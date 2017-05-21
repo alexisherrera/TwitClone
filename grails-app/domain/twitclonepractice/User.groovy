@@ -21,5 +21,6 @@ class User {
   }
 
   //declare 1:many relationship between User and Post classes
-  static hasMany = [posts: Post]
+  //declare 1: many relationship between User and Tag classes
+  static hasMany = [posts: Post, tags: Tag, following: User]
 }
