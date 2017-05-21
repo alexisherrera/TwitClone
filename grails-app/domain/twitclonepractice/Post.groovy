@@ -1,7 +1,6 @@
 package twitclonepractice
 
 class Post {
-
   String content
   Date dateCreated
 

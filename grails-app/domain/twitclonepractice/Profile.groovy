@@ -1,7 +1,6 @@
 package twitclonepractice
 
 class Profile {
-
   static belongsTo = User
   byte[] photo
   String fullName

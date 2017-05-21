@@ -1,7 +1,6 @@
 package twitclonepractice
 
 class Tag {
-
   String tagName
   User user
 
