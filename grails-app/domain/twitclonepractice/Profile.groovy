@@ -19,7 +19,7 @@ class Profile {
     email(email:true, nullable: true)
     photo(nullable: true)
     country(nullable: true)
-    jabberAddress(email: true)
+    jabberAddress(email: true, nullable: true)
     timezone(nullable: true)
   }
 }
