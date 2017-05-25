@@ -1,67 +1,50 @@
 package twitclonepractice
 
 class AuthController {
+  def loginService
+  def registerService
+  def logoutService
 
   //this will be our action for default page where we will handle log ins
   def index() { }
 
   //this will be our action to log in users
   def login() {
-    def user = User.findByUserId(params?.userId)
-
-    //if we found the user and the password matches, authenticate
-    if (user && user.password == params?.password) {
-      authent(user)
+    try {
+      def user = loginService.login(params?.userId)
+      session.user = user
+      if (!session.user.isAttached()) { session.user.attach() }
       //redirect to our new timeline
       redirect(controller:'timeline', action: 'index')
     }
-    else {
-      flash.message = "We couldn't log you in"
+    catch(LoginException e) {
+      flash.message = e.message
       redirect(action: "index")
     }
   }
 
   //registeration action page
-  def register() {
-
-  }
+  def register() { }
 
   //actually register user into our webpage. use this method to avoid
   //initial flash messages
   def registerNewUser() {
-    def user = new User(params)
-    if (user.validate()) {
-      user.save()
-
-      //set up our new message
-      flash.message ="Successfully created user"
-
-      //authenticate newly created user
-      authent(user)
-
-      //redirect to our new timeline
+    try {
+      def user = registerService.registerUser(params)
+      session.user = user
+      if (!session.user.isAttached()) { session.user.attach() }
       redirect(controller:'timeline', action: 'index')
+      flash.message ="Successfully created user"
     }
-    else {
-      //redirect to our register page with the errors displayed
-      flash.message = "Error registering the user"
+    catch(RegisterException e) {
+      flash.message = e.message
       redirect(action: "register")
     }
   }
 
   //action to log a user out
   def logout() {
-    session.invalidate()
+    logoutService.logout()
     redirect(uri: '/')
   }
-
-  //action to authenticate user, aka set them as session.user
-  def authent(user) {
-    //create user as session user and reattatch lazy relationships
-    session.user = user
-    if (!session.user.isAttached()) {
-      session.user.attach()
-    }
-  }
-
 }
