@@ -11,7 +11,7 @@ class AuthController {
   //this will be our action to log in users
   def login() {
     try {
-      def user = loginService.login(params?.userId)
+      def user = loginService.login(params?.userId, params?.password)
       session.user = user
       if (!session.user.isAttached()) { session.user.attach() }
       //redirect to our new timeline
@@ -44,7 +44,7 @@ class AuthController {
 
   //action to log a user out
   def logout() {
-    logoutService.logout()
+    session.invalidate()
     redirect(uri: '/')
   }
 }
