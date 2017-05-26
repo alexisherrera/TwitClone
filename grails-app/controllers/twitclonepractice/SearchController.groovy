@@ -3,9 +3,7 @@ package twitclonepractice
 class SearchController {
   def followService
 
-  def index() {
-
-  }
+  def index() { }
 
   def searchUser() {
     def users = User.findAllByUserIdLike("%${params.userId}%")
@@ -21,5 +19,4 @@ class SearchController {
     }
     redirect(action: 'index')
   }
-
 }
