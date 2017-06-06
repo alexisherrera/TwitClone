@@ -1,4 +1,5 @@
 package twitclonepractice
+import grails.converters.JSON
 
 class ProfileController {
 
@@ -11,6 +12,6 @@ class ProfileController {
       maxResults(10)
       order('dateCreated', 'desc')
     }
-    return [tweets: timelineTweets]
+    return [tweets: timelineTweets] as JSON
   }
 }

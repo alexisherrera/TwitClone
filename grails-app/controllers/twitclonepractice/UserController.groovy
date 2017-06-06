@@ -1,5 +1,6 @@
 package twitclonepractice
 import twitclonepractice.*
+import grails.converters.JSON
 
 class UserController {
   def scaffold = true
@@ -10,7 +11,7 @@ class UserController {
 
   def results = {
     def users = User.findAllByUserIdLike("%${params.userId}%")
-    return [users: users, term: params.userId]
+    return [users: users, term: params.userId] as JSON
   }
 
   def register = {

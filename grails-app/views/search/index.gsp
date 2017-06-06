@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <g:link controller = "Profile" action="index" id ="${session.user.userId}">profile</g:link>
+  <!--<g:link controller = "Profile" action="index" id ="${session.user.userId}">profile</g:link> -->
   <g:link controller = "Timeline" action="index">timeline</g:link>
   <g:link controller = "Auth" action="logout">logout</g:link>
   <formset>

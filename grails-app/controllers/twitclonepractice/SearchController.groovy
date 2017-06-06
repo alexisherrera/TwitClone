@@ -1,4 +1,5 @@
 package twitclonepractice
+import grails.converters.JSON
 
 class SearchController {
   def followService
@@ -7,7 +8,7 @@ class SearchController {
 
   def searchUser() {
     def users = User.findAllByUserIdLike("%${params.userId}%")
-    return [users: users]
+    return [users: users] as JSON
   }
 
   def follow() {

@@ -1,4 +1,5 @@
 package twitclonepractice
+import grails.converters.JSON
 
 class TimelineController {
   def postService
@@ -22,7 +23,7 @@ class TimelineController {
       order('dateCreated', 'desc')
     }
 
-    return [following: user.following, tweets: timelineTweets]
+    return [following: user.following, tweets: timelineTweets] as JSON
   }
 
   //if the session user decides to tweet
