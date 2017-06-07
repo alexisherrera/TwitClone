@@ -11,7 +11,7 @@ class UserController {
 
   def results = {
     def users = User.findAllByUserIdLike("%${params.userId}%")
-    return [users: users, term: params.userId] as JSON
+    return [users: users, term: params.userId]
   }
 
   def register = {
@@ -29,6 +29,6 @@ class UserController {
 
   def profile = {
     def user = User.findByUserId(params.id)
-    return[profile: user.profile, userId: user.userId]
+    return [profile: user.profile, userId: user.userId]
   }
 }

@@ -6,31 +6,24 @@
 </head>
 
 <body>
-  <!--<g:link controller = "Profile" action="index" id ="${session.user.userId}">profile</g:link> -->
-  <g:link controller = "Timeline" action="index">timeline</g:link>
-  <g:link controller = "Auth" action="logout">logout</g:link>
-  <formset>
-    <legend>Search for Users or Tweets!</legend>
 
-    <!-- this g:form action indicates that this form should be sent to
+  <!-- this g:form action indicates that this form should be sent to
     the results action in the user controller -->
-    <g:form action="searchUser">
-      <label for="userId">User Id</label>
-      <!-- g:textField indicates that the name of the textbox is
-      userId, so we can handle it's input in in the results action in our
-      controller -->
-      <g:textField name="userId" />
-      <g:submitButton name="search" value="Search" />
-    </g:form>
-  </formset>
-  <div class="allUsers">
-    <g:each in="${users}" var="user">
-      <div class="userEntry">
-        <div class="userId">
-          ${user.userId}
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Search for users!</strong></h3>
+      <p>
+        Lookup a person's username:
+      </p>
+      <form action = "/twitclone/search/searchUser">
+        <div class="input-group input-group-md">
+          <span class="input-group-addon" id="sizing-addon1">@</span>
+          <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" name = "userId">
         </div>
-      </div>
-    </g:each>
+        <input class="btn btn-primary" type="submit" value="search!">
+    </form>
+
+    </div>
   </div>
 </body>
 

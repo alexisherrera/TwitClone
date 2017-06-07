@@ -1,6 +1,7 @@
 package twitclonepractice
 
 import grails.transaction.Transactional
+import grails.converters.JSON
 
 class RegisterException extends RuntimeException {
   String message
@@ -12,6 +13,7 @@ class RegisterService {
   //service to register a user to the platform
   User registerUser(Map data) {
     def user = new User(data)
+    println(user as JSON)
     //validate new user
     if (user.validate()) {
       user.save()

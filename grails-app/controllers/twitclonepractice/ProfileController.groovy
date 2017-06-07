@@ -1,5 +1,7 @@
 package twitclonepractice
 import grails.converters.JSON
+import groovy.time.TimeCategory
+import groovy.time.TimeDuration
 
 class ProfileController {
 
@@ -12,6 +14,6 @@ class ProfileController {
       maxResults(10)
       order('dateCreated', 'desc')
     }
-    return [tweets: timelineTweets] as JSON
+    return [name: user.profile.fullName, bio: user.profile.bio, tweets: timelineTweets]
   }
 }

@@ -1,5 +1,7 @@
 package twitclonepractice
 import grails.converters.JSON
+import groovy.time.TimeCategory
+import groovy.time.TimeDuration
 
 class TimelineController {
   def postService
@@ -23,7 +25,7 @@ class TimelineController {
       order('dateCreated', 'desc')
     }
 
-    return [following: user.following, tweets: timelineTweets] as JSON
+    return [following: user.following, tweets: timelineTweets]
   }
 
   //if the session user decides to tweet

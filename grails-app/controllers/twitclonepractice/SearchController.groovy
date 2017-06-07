@@ -8,7 +8,7 @@ class SearchController {
 
   def searchUser() {
     def users = User.findAllByUserIdLike("%${params.userId}%")
-    return [users: users] as JSON
+    return [users: users]
   }
 
   def follow() {

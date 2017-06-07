@@ -15,11 +15,11 @@ class AuthController {
       session.user = user
       if (!session.user.isAttached()) { session.user.attach() }
       //redirect to our new timeline
-      redirect(controller:'timeline', action: 'index')
+      redirect(uri: "/timeline")
     }
     catch(LoginException e) {
       flash.message = e.message
-      redirect(action: "index")
+      redirect(uri: "/")
     }
   }
 
@@ -30,15 +30,15 @@ class AuthController {
   //initial flash messages
   def registerNewUser() {
     try {
-      def user = registerService.registerUser(params)
+      def user = registerService.registerUser([params])
       session.user = user
       if (!session.user.isAttached()) { session.user.attach() }
-      redirect(controller:'timeline', action: 'index')
+      redirect(uri: "/timeline")
       flash.message ="Successfully created user"
     }
     catch(RegisterException e) {
       flash.message = e.message
-      redirect(action: "register")
+      redirect(uri: "/register")
     }
   }
 

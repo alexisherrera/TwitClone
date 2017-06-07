@@ -1,27 +1,24 @@
 <html>
-  <head>
-    <title>Login</title>
-    <meta name = "layout" content = "main"/>
-  </head>
 
-  <body>
-    <h1>Sign in</h1>
-    <g:if test="${flash.message}">
-      <div class="message" style="display: block">${flash.message}</div>
-    </g:if>
+<head>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+  <title>Twitclone - Login</title>
+</head>
 
-    <g:form action = "login">
-      <dl>
-        <dt>User Id</dt>
-        <dd><g:textField name = "userId" /></dd>
+<body>
+  <g:if test="${flash.message}">
+    <div class="message" style="display: block">${flash.message}</div>
+  </g:if>
 
-        <dt>Password</dt>
-        <dd><g:passwordField name = "password"/></dd>
 
-        <dt><g:submitButton name = "register" value = "Log in" /></dt>
-      </dl>
-    </g:form>
-    <g:link controller = "Auth" action="register">I don't have an account</g:link>
-
-  </body>
+  <div class="col-md-6 col-md-offset-3">
+    <h2>Sign in</h2>
+    <form action="auth/login">
+      <label>Username: <input type="text" name="userId" /></label><br />
+      <label>Password: <input type="text" name="password" /></label><br />
+      <input type="submit" value="login" />
+    </form>
+    <a href="register">I do not not have an account</a>
+  </div>
+</body>
 </html>

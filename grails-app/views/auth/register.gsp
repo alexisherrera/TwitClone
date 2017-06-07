@@ -1,38 +1,26 @@
 <html>
   <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
     <title>Register New User</title>
-    <meta name = "layout" content = "main"/>
   </head>
 
   <body>
-    <h1>Register New User</h1>
-
     <g:if test="${flash.message}">
       <div class="message" style="display: block">${flash.message}</div>
     </g:if>
 
-    <g:form action = "registerNewUser">
-      <dl>
-        <dt>User Id</dt>
-        <dd><g:textField name = "userId" value = "${user?.userId}" /></dd>
-
-        <dt>Password</dt>
-        <dd><g:passwordField name = "password" value = "${user?.password}" /></dd>
-
-        <dt>Full Name</dt>
-        <dd><g:textField name = "profile.fullName" value = "${user?.profile?.fullName}" /></dd>
-
-        <dt>Bio</dt>
-        <dd><g:textField name = "profile.bio" value = "${user?.profile?.bio}" /></dd>
-
-        <dt>Email Address</dt>
-        <dd><g:textField name = "profile.email" value = "${user?.profile?.email}" /></dd>
-
-        <dt><g:submitButton name = "register" value = "Register New User" /></dt>
-
-      </dl>
-    </g:form>
-    <g:link controller = "Auth" action="register">I have an account</g:link>
+    <div class="col-md-6 col-md-offset-3">
+    <h2>Register New User</h2>
+    <form action = "/twitclone/auth/registerNewUser">
+      <label>Username: <input type="text" name="userId" /></label><br />
+      <label>Password: <input type="text" name="password" /></label><br />
+      <label>Full Name: <input type="text" name= "profile.fullName" /></label><br />
+      <label>Bio: <input type="text" name="profile.bio" /></label><br />
+      <label>Email: <input type="text" name="profile.email" /></label><br />
+      <input type="submit" value="Register" />
+  </form>
+  <a href ="/twitclone/">I have an account</a>
+  </div>
 
   </body>
 </html>

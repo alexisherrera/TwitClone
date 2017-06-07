@@ -1,4 +1,6 @@
 package twitclonepractice
+import groovy.time.TimeCategory
+import groovy.time.TimeDuration
 
 class Post {
   String content
