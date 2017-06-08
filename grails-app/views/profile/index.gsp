@@ -33,20 +33,19 @@
   <div class="container">
     <br />
     <div class="jumbotron">
-      <h3>Profile for <strong>${name} </strong></h3>
+      <h3><strong>${name} </strong></h3>
       <p>
-        Bio: ${bio}
+        <strong>Bio:</strong> ${bio}
       </p>
-      <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
     </div>
   </div>
 
   <div class="container">
 
     <g:each in="${tweets}" var="post">
-      <div class="card text-center">
+      <div class="card text">
         <div class="card-header">
-          ${post.user.profile.fullName}
+          <button type="button" class="btn btn-primary" style="background-color: ${post.user.favColor};">${post.user.profile.fullName}</button>
         </div>
         <div class="card-block">
           <p class="card-text">${post.content}</p>

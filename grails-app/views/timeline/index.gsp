@@ -35,7 +35,7 @@
           <span class="input-group-addon" id="basic-addon1">&#129300;</span>
           <input type="text" class="form-control" placeholder="Tell the world something..." aria-describedby="basic-addon1" rows="3 " cols="50" name="content" id="postContent">
         </div>
-        <input class="btn btn-primary" type="submit" value="Tweet!">
+        <input class="btn btn-primary" type="submit" value="Tweet!" style="background-color: ${session.user.favColor};">
       </form>
     </div>
   </div>
@@ -45,7 +45,7 @@
     <g:each in="${tweets}" var="post">
       <div class="card text">
         <div class="card-header">
-          ${post.user.profile.fullName}
+          <a href="/twitclone/profile/index/${post.user.userId}"> <button type="button" class="btn btn-primary" style="background-color: ${post.user.favColor};">${post.user.profile.fullName}</button></a>
         </div>
         <div class="card-block">
           <p class="card-text">${post.content}</p>

@@ -21,31 +21,12 @@
           <span class="input-group-addon" id="sizing-addon1">@</span>
           <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" name="userId">
         </div>
-        <input class="btn btn-primary" type="submit" value="search!">
+        <input class="btn btn-primary" type="submit" value="search!" style="background-color: ${session.user.favColor};">
       </form>
 
     </div>
   </div>
 
-
-  <div class="container">
-
-    <g:each in="${tweets}" var="post">
-      <div class="card text">
-        <div class="card-header">
-          ${post.user.profile.fullName}
-        </div>
-        <div class="card-block">
-          <p class="card-text">${post.content}</p>
-        </div>
-        <div class="card-footer text-muted">
-          ${post.dateCreated}
-        </div>
-      </div>
-      <br />
-    </g:each>
-
-  </div>
   <g:if test="${users}">
     <div class="container">
       <h3>Search Results:</h3>
@@ -55,8 +36,9 @@
         <g:each in="${users}" var="user">
           <div class="card text">
             <div class="card-header">
-              <strong>${user.profile.fullName}</strong>
-              <br /> @${user.userId}
+              <a href="/twitclone/profile/index/${user.userId}"> <button type="button" class="btn btn-primary" style="background-color: ${user.favColor};"><strong>${user.profile.fullName}</strong>
+              <br /> @${user.userId}</button></a>
+
             </div>
             <div class="card-block">
               <p class="card-text"><strong>Bio: </strong>${user.profile.bio}</p>

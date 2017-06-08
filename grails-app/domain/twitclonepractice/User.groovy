@@ -6,6 +6,7 @@ class User {
   String userId
   String password
   String homepage
+  String favColor
   Date dateCreated
 
 

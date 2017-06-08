@@ -17,6 +17,7 @@
       <label>Full Name: <input type="text" name= "profile.fullName" /></label><br />
       <label>Bio: <input type="text" name="profile.bio" /></label><br />
       <label>Email: <input type="text" name="profile.email" /></label><br />
+      <label>Pick your favorite color: <input type="color" name ="favColor"></label><br/>
       <input type="submit" value="Register" />
   </form>
   <a href ="/twitclone/">I have an account</a>
