@@ -3,12 +3,21 @@ import grails.converters.JSON
 
 class SearchController {
   def followService
+  def usersToDisplay
 
-  def index() { }
+  def index() {
+    if (usersToDisplay) {
+      def usersMap = usersToDisplay
+      this.usersToDisplay = null
+      return [users: usersMap]
+    }
+
+  }
 
   def searchUser() {
     def users = User.findAllByUserIdLike("%${params.userId}%")
-    return [users: users]
+    this.usersToDisplay = users
+    redirect(controller: 'search')
   }
 
   def follow() {

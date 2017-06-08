@@ -24,18 +24,18 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" href="timeline">Timeline <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="\twitclone\timeline">Timeline <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="search">Search</a>
+					<a class="nav-link" href="\twitclone\search">Search</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="profile/index/${session.user.userId}">Profile</a>
+					<a class="nav-link" href="\twitclone\profile/index/${session.user.userId}">Profile</a>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-    	<a class="nav-link" href="/twitclone/auth/logout">Log out</a>
-    </ul>
+				<a class="nav-link" href="/twitclone/auth/logout">Log out</a>
+			</ul>
 
 		</div>
 	</nav>

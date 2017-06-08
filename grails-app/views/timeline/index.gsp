@@ -27,12 +27,13 @@
     </div>
   </div>
   <div class="container">
+    <br />
     <div class="jumbotron">
       <h3>Welcome ${session.user.profile.fullName}. What's on your mind?</h3>
-      <form action = "/twitclone/timeline/addPost" id = "${session.user.userId}">
+      <form action="/twitclone/timeline/addPost" id="${session.user.userId}">
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">&#129300;</span>
-          <input type="text" class="form-control" placeholder="Tell the world something" aria-describedby="basic-addon1" rows="3 " cols="50" name = "content" id = "postContent">
+          <input type="text" class="form-control" placeholder="Tell the world something..." aria-describedby="basic-addon1" rows="3 " cols="50" name="content" id="postContent">
         </div>
         <input class="btn btn-primary" type="submit" value="Tweet!">
       </form>
@@ -42,24 +43,21 @@
   <div class="container">
 
     <g:each in="${tweets}" var="post">
-      <div class="card text-center">
+      <div class="card text">
         <div class="card-header">
           ${post.user.profile.fullName}
         </div>
         <div class="card-block">
           <p class="card-text">${post.content}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
         <div class="card-footer text-muted">
           ${post.dateCreated}
         </div>
       </div>
+      <br />
     </g:each>
 
   </div>
-
-
-
 
 </body>
 

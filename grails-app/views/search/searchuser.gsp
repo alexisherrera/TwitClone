@@ -7,27 +7,29 @@
 
 <body>
 
-  <legend>Search Results</legend>
 
-  <div class="allUsers">
-    <g:each in="${users}" var="user">
-      <div class="userEntry">
-        <div class="userId">
-          ${user.userId}
-        </div>
-        <g:form action = "follow">
-          <dl>
-            <dt>User Id:</dt>
-            <dt name ="userId">${user.userId}
+  <g:if test="${user}">
+    <legend>Search Results</legend>
+    <div class="allUsers">
+      <g:each in="${users}" var="user">
+        <div class="userEntry">
+          <div class="userId">
+            ${user.userId}
+          </div>
+          <g:form action="follow">
+            <dl>
+              <dt>User Id:</dt>
+              <dt name="userId">${user.userId}
             <g:radio name="userId" value="${user.userId}"/>
             <g:submitButton name = "register" value = "Follow" />
             </dt>
-          </dl>
-        </g:form>
+            </dl>
+          </g:form>
 
-      </div>
-    </g:each>
-  </div>
+        </div>
+      </g:each>
+    </div>
+  </g:if>
 </body>
 
 </html>
