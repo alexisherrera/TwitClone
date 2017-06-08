@@ -14,6 +14,7 @@ class ProfileController {
       maxResults(10)
       order('dateCreated', 'desc')
     }
-    return [name: user.profile.fullName, bio: user.profile.bio, tweets: timelineTweets, color: user.favColor]
+    return [name: user.profile.fullName, bio: user.profile.bio, tweets: timelineTweets,
+    color: user.favColor, followingSize: user.following.size(), followersSize: user.followers.size()]
   }
 }

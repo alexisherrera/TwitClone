@@ -9,7 +9,20 @@ class SearchController {
     if (usersToDisplay) {
       def usersMap = usersToDisplay
       this.usersToDisplay = null
-      return [users: usersMap]
+      def followingMap = [:]
+      def sesUser = User.findByUserId(session.user.userId)
+      usersMap.each {
+
+        sesUser.following.each { ses ->
+          if (ses.userId == it.userId) {
+            followingMap[it.userId] = true;
+          }
+          else {
+            followingMap[it.userId] = false;
+          }
+        }
+      }
+      return [users: usersMap, followingMap: followingMap]
     }
 
   }

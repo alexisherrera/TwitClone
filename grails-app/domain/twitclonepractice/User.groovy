@@ -29,12 +29,12 @@ class User {
 
   //declare 1:many relationship between User and Post classes
   //declare 1: many relationship between User and Tag classes
-  static hasMany = [following: User, posts: Post]
+  static hasMany = [following: User, followers: User, posts: Post]
   //static mappedBy = [following: 'following']
 
 
   //method to check if user follows another userId
-  static boolean follows(String home, String otherId) {
+  boolean follows(String home, String otherId) {
     def userHome = User.findByUserId(home)
 
     userHome.following.each {

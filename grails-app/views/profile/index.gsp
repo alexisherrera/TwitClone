@@ -37,6 +37,10 @@
       <p>
         <strong>Bio:</strong> ${bio}
       </p>
+      <p> following: ${followingSize}
+      </p>
+      <p> followers: ${followersSize}
+      </p>
     </div>
   </div>
 

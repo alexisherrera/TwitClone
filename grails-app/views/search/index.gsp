@@ -42,12 +42,16 @@
             </div>
             <div class="card-block">
               <p class="card-text"><strong>Bio: </strong>${user.profile.bio}</p>
-              <g:form action="follow">
-                <g:radio name="userId" value="${user.userId}" />
-                <g:submitButton name="register" value="Follow" />
-                </dt>
-                </dl>
-              </g:form>
+
+              <g:if test="${followingMap[user.userId]}">
+                  <button type="button" class="btn btn-primary disabled" style="background-color: ${user.favColor};"><strong>following</strong></button>
+              </g:if>
+              <g:else>
+                <form action="follow">
+                  <button type="submit" name = "userId" value="${user.userId}" class="btn btn-primary" style="background-color: ${user.favColor};">Follow</button>
+                  <form/>
+              </g:else>
+
             </div>
           </div>
         </g:each>

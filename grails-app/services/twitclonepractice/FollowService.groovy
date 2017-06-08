@@ -17,6 +17,7 @@ class FollowService {
 
     if (user && personToFollow) {
       user.addToFollowing(personToFollow)
+      personToFollow.addToFollowers(user)
       user.save(flush: true, failOnError: true)
     }
     else {
