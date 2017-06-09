@@ -11,6 +11,21 @@
 
 <body>
 
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div id="newPost">
+          <g:if test="${flash.message}">
+            <div class="flash">
+              ${flash.message}
+            </div>
+          </g:if>
+
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <br />
     <div class="jumbotron">
