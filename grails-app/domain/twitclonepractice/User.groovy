@@ -21,6 +21,7 @@ class User {
 
   //load our profile with our user
   static mapping = {
+    table 'person'
     profile lazy: false
     posts lazy: false
     following lazy: false

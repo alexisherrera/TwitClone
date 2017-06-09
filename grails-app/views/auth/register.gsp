@@ -21,7 +21,7 @@
           <h2>Register!</h2>
           <form action="/twitclone/auth/registerNewUser">
             <label>Username: <input type="text" name="userId" /></label><br />
-            <label>Password: <input type="text" name="password" /></label><br />
+            <label>Password: <input type="password" name="password" /></label><br />
             <label>Full Name: <input type="text" name= "profile.fullName" /></label><br />
             <label>Bio: <input type="text" name="profile.bio" /></label><br />
             <label>Email: <input type="text" name="profile.email" /></label><br />

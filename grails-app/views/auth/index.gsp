@@ -22,7 +22,7 @@
         <h2>Sign in</h2>
         <form action="auth/login">
           <label>Username: <input type="text" name="userId" /></label><br />
-          <label>Password: <input type="text" name="password" /></label><br />
+          <label>Password: <input type="password" name="password" /></label><br />
           <input type="submit" value="login" />
         </form>
         <a href="register">I do not not have an account</a>
