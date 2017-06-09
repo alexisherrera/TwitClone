@@ -26,7 +26,6 @@
   </div>
 
   <div class="container">
-
     <g:each in="${tweets}" var="post">
       <div class="card text">
         <div class="card-header">
@@ -41,9 +40,7 @@
       </div>
       <br />
     </g:each>
-
   </div>
-
 </body>
 
 </html>

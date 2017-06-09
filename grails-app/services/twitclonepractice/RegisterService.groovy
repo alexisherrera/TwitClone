@@ -13,7 +13,6 @@ class RegisterService {
   //service to register a user to the platform
   User registerUser(Map data) {
     def user = new User(data)
-    println(user as JSON)
     //validate new user
     if (user.validate()) {
       user.save()
